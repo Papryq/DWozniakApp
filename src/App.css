@@ -8,5 +8,8 @@
   };
   .button-transition {
     @apply transition ease-in-out delay-150 hover:text-sky-300 duration-300;
+  };
+  .button-header {
+    @apply transition ease-in-out delay-150 hover:text-sky-400 duration-300;
   }
 }
