@@ -1,7 +1,10 @@
 import './App.css';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
+import ClockCards from './components/ClockCards';
 import Quote from './components/Quote';
+import CarpetCards from './components/CarpetCards';
+import BlogCards from './components/BlogCards';
 
 function App() {
   return (
@@ -9,6 +12,9 @@ function App() {
         <Navbar />
         <Header />
         <Quote />
+        <ClockCards />
+        <CarpetCards />
+        <BlogCards />
     </>
   );
 }
