@@ -5,6 +5,8 @@ import ClockCards from './components/ClockCards';
 import Quote from './components/Quote';
 import CarpetCards from './components/CarpetCards';
 import BlogCards from './components/BlogCards';
+import Footer from './components/Footer';
+import WebCloser from './components/WebCloser';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <ClockCards />
         <CarpetCards />
         <BlogCards />
+        <Footer />
+        <WebCloser />
     </>
   );
 }
