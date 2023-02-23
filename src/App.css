@@ -10,6 +10,15 @@
     @apply transition ease-in-out delay-150 hover:text-sky-300 duration-300;
   };
   .button-header {
-    @apply transition ease-in-out delay-150 hover:text-sky-400 duration-300;
-  }
+    @apply transition ease-in-out hover:text-yellow-300 hover:bg-white hover:scale-110 duration-300;
+  };
+  .button-card-animation{
+    @apply hover:bg-black hover:text-white duration-200;
+  };
+  .card-animation {
+    @apply transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:shadow-2xl duration-300;
+  };
+  .blog-animation {
+    @apply transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300;
+  };
 }
