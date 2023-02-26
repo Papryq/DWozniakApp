@@ -7,25 +7,25 @@ export default function ClockCards() {
             <h1 className='text-4xl ml-12 md:ml-80 py-2'>Zegary</h1>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-4 md:mx-64 gap-8 py-8'>
-            <div className='card-animation flex flex-col bg-gray-100 rounded-lg border-gray-100 border-8 pb-4'>
+            <div className='card-classes'>
                 <img src={Minion} alt="" className="max-w-sm max-h-sm bg-white"/>
                 <h2 className="mx-auto p-2 text-3xl">Minionek</h2>
                 <p className="mx-8 p-4 text-gray-400">minionek jest bardzo zly i nie lubi ludzi</p>
                 <button className="button-card-animation border-2 border-gray-700 mx-auto rounded-xl px-6 py-2">Zobacz</button>
             </div>
-            <div className='card-animation flex flex-col bg-gray-100 rounded-lg border-gray-100 border-8 pb-4'>
+            <div className='card-classes'>
                 <img src={Minion} alt="" className="max-w-sm max-h-sm bg-white"/>
                 <h2 className="mx-auto p-2 text-3xl">Minionek</h2>
                 <p className="mx-8 p-4 text-gray-400">minionek jest bardzo zly i nie lubi ludzi</p>
                 <button className="button-card-animation border-2 border-gray-700 mx-auto rounded-xl px-6 py-2">Zobacz</button>
             </div>
-            <div className='card-animation flex flex-col bg-gray-100 rounded-lg border-gray-100 border-8 pb-4'>
+            <div className='card-classes'>
                 <img src={Minion} alt="" className="max-w-sm max-h-sm bg-white"/>
                 <h2 className="mx-auto p-2 text-3xl">Minionek</h2>
                 <p className="mx-8 p-4 text-gray-400">minionek jest bardzo zly i nie lubi ludzi</p>
                 <button className="button-card-animation border-2 border-gray-700 mx-auto rounded-xl px-6 py-2">Zobacz</button>
             </div>
-            <div className='card-animation flex flex-col bg-gray-100 rounded-lg border-gray-100 border-8 pb-4'>
+            <div className='card-classes'>
                 <img src={Minion} alt="" className="max-w-sm max-h-sm bg-white"/>
                 <h2 className="mx-auto p-2 text-3xl">Minionek</h2>
                 <p className="mx-8 p-4 text-gray-400">minionek jest bardzo zly i nie lubi ludzi</p>

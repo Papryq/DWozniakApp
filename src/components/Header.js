@@ -16,29 +16,29 @@ export default function Header() {
   <div
     className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
     <div
-      className="relative float-left -mr-[100%] w-full max-h-screen transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      className="relative float-left -mr-[100%] w-full max-h-screen transition-transform ease-in-out motion-reduce:transition-none"
       data-te-carousel-item
       data-te-carousel-active>
       <img
         src={header1}
         className="block w-full"
-        alt="Wild Landscape" />
+        alt="" />
     </div>
     <div
-      className="relative float-left -mr-[100%] hidden w-full max-h-screen transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      className="relative float-left -mr-[100%] hidden w-full max-h-screen transition-transform ease-in-out motion-reduce:transition-none"
       data-te-carousel-item>
       <img
         src={header2}
         className="block w-full"
-        alt="Camera" />
+        alt="" />
     </div>
     <div
-      className="relative float-left -mr-[100%] hidden w-full max-h-screen transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      className="relative float-left -mr-[100%] hidden w-full max-h-screen transition-transform ease-in-out motion-reduce:transition-none"
       data-te-carousel-item>
       <img
         src={header3}
         className="block w-full"
-        alt="Exotic Fruits" />
+        alt="" />
     </div>
   </div>
   <button
@@ -60,10 +60,6 @@ export default function Header() {
           d="M15.75 19.5L8.25 12l7.5-7.5" />
       </svg>
     </span>
-    <span
-      className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-      >Previous</span
-    >
   </button>
   <button
     className="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
@@ -84,21 +80,17 @@ export default function Header() {
           d="M8.25 4.5l7.5 7.5-7.5 7.5" />
       </svg>
     </span>
-    <span
-      className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-      >Next</span
-    >
   </button>
+  <div className="bg-gray-400 max-w-2/3 max-h-2/3 absolute md:absolute opacity-75 text-white px-4 py-4 md:py-16 md:rounded-lg top-4 left-4 md:top-48 md:left-48 ">
+      <div className='flex flex-col justify-items-center'>
+      <h1 className="text-sky-300 md:py-4 text-xl md:text-4xl">Szklane zegary</h1>
+      <p className='md:max-w-prose text-xs'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut rerum quam, quisquam, laboriosam possimus ratione reprehenderit repellendus veritatis vel voluptates mollitia optio excepturi, rem iusto dolores dolore pariatur sapiente illum iste repudiandae!</p>
+      <div className='flex justify-center'>
+          <button className='mt-1 p-2 text-xs rounded-lg bg-yellow-300 text-white button-header'>Sprawdz oferte</button>
+      </div>
+      </div>
+  </div>
 </div>
-        <div className="bg-gray-400 md:absolute opacity-75 text-white px-12 py-16 md:rounded-lg md:top-48 md:left-48 ">
-            <div className='flex flex-col justify-items-center'>
-            <h1 className="text-sky-300 py-4 text-4xl">Szklane zegary</h1>
-            <p className='md:max-w-prose'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi adipisci temporibus saepe aperiam ipsa architecto accusamus quas earum obcaecati. Distinctio, laborum! Nulla in vitae neque, recusandae molestias excepturi nostrum ad quaerat impedit!</p>
-            <div className='flex justify-center'>
-                <button className='mt-4 p-2 rounded-lg bg-yellow-300 text-white button-header'>Sprawdz oferte</button>
-            </div>
-            </div>
-        </div>
   </>
   )
 }
