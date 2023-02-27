@@ -1,37 +1,147 @@
-import Minion from './assets/minion.png'
+import React, { useState } from "react";
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
+import Minion from './assets/minion.png';
 
-export default function ClockCards() {
-  return (
-    <>
-        <div className='flex justify-start pt-16'>
-            <h1 className='text-4xl ml-12 md:ml-80 py-2'>Zegary</h1>
+/* Install pure-react-carousel using -> npm i pure-react-carousel */
+
+export default function Index() {
+    return (
+        <div className="container mx-auto">
+            <h2 className="mt-4 pt-4 ml-8 text-4xl">Zegary</h2>
+            <div className="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
+                {/* Carousel for desktop and large size devices */}
+                <CarouselProvider className="lg:block hidden" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={4} visibleSlides={4} step={1} infinite={true}>
+                    <div className="w-full relative flex items-center justify-center">
+                        <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
+                            <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 1L1 7L7 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </ButtonBack>
+                        <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                            <Slider>
+                                <div id="slider" className="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
+                                    <Slide index={0}>
+                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto card-animation">
+                                            <img src={Minion} alt="minion" className="object-cover object-center w-full" />
+                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 1</h2>
+                                                <div className="flex h-full items-end pb-6">
+                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Slide>
+                                    <Slide index={1}>
+                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto card-animation">
+                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
+                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
+                                                <div className="flex h-full items-end pb-6">
+                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Slide>
+                                    <Slide index={2}>
+                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto card-animation" >
+                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
+                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
+                                                <div className="flex h-full items-end pb-6">
+                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Slide>
+                                    <Slide index={3}>
+                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto card-animation">
+                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
+                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
+                                                <div className="flex h-full items-end pb-6">
+                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Slide>
+                                </div>
+                            </Slider>
+                        </div>
+                        <ButtonNext role="button" aria-label="slide forward" className="absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
+                            <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L1 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </ButtonNext>
+                    </div>
+                </CarouselProvider>
+
+                {/* Carousel for mobile and Small size Devices */}
+                <CarouselProvider className="block md:hidden " naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={4} visibleSlides={1} step={1} infinite={true}>
+                    <div className="w-full relative flex items-center justify-center">
+                        <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
+                            <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 1L1 7L7 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </ButtonBack>
+                        <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                            <Slider>
+                                <div id="slider" className="h-full w-full flex lg:gap-8 md:gap-6 items-center justify-start transition ease-out duration-700">
+                                    <Slide index={0}>
+                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto">
+                                            <img src={Minion} alt="black chair and white table" className="object-cover object-center w-full" />
+                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 1</h2>
+                                                <div className="flex h-full items-end pb-6">
+                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Slide>
+                                    <Slide index={1}>
+                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto">
+                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
+                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
+                                                <div className="flex h-full items-end pb-6">
+                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Slide>
+                                    <Slide index={2}>
+                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto">
+                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
+                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
+                                                <div className="flex h-full items-end pb-6">
+                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Slide>
+                                    <Slide index={3}>
+                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto ">
+                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
+                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
+                                                <div className="flex h-full items-end pb-6">
+                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Slide>
+                                </div>
+                            </Slider>
+                        </div>
+                        <ButtonNext role="button" aria-label="slide forward" className="absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
+                            <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L1 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </ButtonNext>
+                    </div>
+                </CarouselProvider>
+            </div>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-4 md:mx-64 gap-8 py-8'>
-            <div className='card-classes'>
-                <img src={Minion} alt="" className="max-w-sm max-h-sm bg-white"/>
-                <h2 className="mx-auto p-2 text-3xl">Minionek</h2>
-                <p className="mx-8 p-4 text-gray-400">minionek jest bardzo zly i nie lubi ludzi</p>
-                <button className="button-card-animation border-2 border-gray-700 mx-auto rounded-xl px-6 py-2">Zobacz</button>
-            </div>
-            <div className='card-classes'>
-                <img src={Minion} alt="" className="max-w-sm max-h-sm bg-white"/>
-                <h2 className="mx-auto p-2 text-3xl">Minionek</h2>
-                <p className="mx-8 p-4 text-gray-400">minionek jest bardzo zly i nie lubi ludzi</p>
-                <button className="button-card-animation border-2 border-gray-700 mx-auto rounded-xl px-6 py-2">Zobacz</button>
-            </div>
-            <div className='card-classes'>
-                <img src={Minion} alt="" className="max-w-sm max-h-sm bg-white"/>
-                <h2 className="mx-auto p-2 text-3xl">Minionek</h2>
-                <p className="mx-8 p-4 text-gray-400">minionek jest bardzo zly i nie lubi ludzi</p>
-                <button className="button-card-animation border-2 border-gray-700 mx-auto rounded-xl px-6 py-2">Zobacz</button>
-            </div>
-            <div className='card-classes'>
-                <img src={Minion} alt="" className="max-w-sm max-h-sm bg-white"/>
-                <h2 className="mx-auto p-2 text-3xl">Minionek</h2>
-                <p className="mx-8 p-4 text-gray-400">minionek jest bardzo zly i nie lubi ludzi</p>
-                <button className="button-card-animation border-2 border-gray-700 mx-auto rounded-xl px-6 py-2">Zobacz</button>
-            </div>
-        </div>
-    </>
-  )
+    );
 }
