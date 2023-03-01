@@ -1,55 +1,101 @@
-import Minion from './assets/minion.png';
-import LeftArrow from './assets/left-arrow.png';
-import RightArrow from './assets/right-arrow.png';
+import { useState } from "react";
 
-const cards = [
-    {
-        id: 0,
-        title: 'Minionek1',
-        text: 'minionek jest bardzo zly i nie lubi ludzi'
-    },
-    {
-        id: 1,
-        title: 'Minionek2',
-        text: 'minionek jest bardzo zly i nie lubi ludzi'
-    },
-    {
-        id: 2,
-        title: 'Minionek3',
-        text: 'minionek jest bardzo zly i nie lubi ludzi'
-    },
-    {
-        id: 3,
-        title: 'Minionek4',
-        text: 'minionek jest bardzo zly i nie lubi ludzi'
-    }
-]
+const items = [
+  {
+    id: 1,
+    title: "Przykładowy tytuł 1",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore.",
+  },
+  {
+    id: 2,
+    title: "Przykładowy tytuł 2",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore.",
+  },
+  {
+    id: 3,
+    title: "Przykładowy tytuł 3",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 3",
+  },
+  {
+    id: 4,
+    title: "Przykładowy tytuł 4",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 4",
+  },
+  {
+    id: 5,
+    title: "Przykładowy tytuł 5",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 5",
+  },
+  {
+    id: 6,
+    title: "Przykładowy tytuł 6",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 6",
+  },
+];
 
+const getRandomImageUrl = () => {
+  const randomId = Math.floor(Math.random() * 1000);
+  return `https://picsum.photos/300/200?random=${randomId}`;
+};
 
-export default function CarpetCards() {
-  return (
-    <>
-        <div className='flex justify-start pt-16'>
-            <h1 className='text-4xl ml-12 md:ml-80 py-2'>Zegary</h1>
-            <div className='md:flex md:flex-row'>
-                    <button
-                    ><img className='px-4' src={LeftArrow} /></button>
-                    <button
-                    ><img src={RightArrow} alt="" /></button>
-                </div>
+const CarpetCards = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+  
+    const handlePrevClick = () => {
+      setCurrentIndex((prevIndex) => Math.max(0, prevIndex - 1));
+    };
+  
+    const handleNextClick = () => {
+      setCurrentIndex((prevIndex) => Math.min(items.length - 1, prevIndex + 1));
+    };
+  
+    return (
+      <div className="flex flex-col md:mx-24 items-center justify-center">
+        <div className="flex items-center justify-between w-full px-4 md:mr-0 md:mt-8">
+            <h1 className="text-4xl md:mr-24 mb-8">Zegary</h1>
+            <div>
+                <button
+                    className="md:mx-4 px-4 py-2 bg-gray-200 rounded-lg mr-4 button-card-animation"
+                    onClick={handlePrevClick}
+                >
+                    {"<"}
+                </button>
+                <button
+                    className="px-4 py-2 bg-gray-200 rounded-lg button-card-animation"
+                    onClick={handleNextClick}
+                >
+                    {">"}
+                </button>
+            </div>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-4 md:mx-64 gap-8 py-8'>
-            {cards.map(card => 
-               (
-                <div className="card-classes" key={card.id}>
-                    <img className="max-w-sm max-h-sm bg-white" src={Minion} alt="Minion" />
-                    <h2 className="mx-auto p-2 text-3xl" >{card.title}</h2>
-                    <p className="mx-8 p-4 text-gray-400" >{card.text}</p>
-                    <button className="button-card-animation border-2 border-gray-700 mx-auto rounded-xl px-6 py-2">Zobacz</button>
+        <div className="flex mt-4">
+          {items.slice(0, 4).map((item, index) => (
+            <div
+              key={item.id}
+              className={`w-full sm:w-1/2 md:w-1/4 p-4  ${
+                index === currentIndex ? "" : "hidden sm:block"
+              }`}
+            >
+              <div className="bg-white rounded-lg shadow-md md:card-animation">
+                <img
+                  className="w-full h-80 object-cover rounded-t-lg"
+                  src={getRandomImageUrl()}
+                  alt={item.title}
+                />
+                <div className="p-4">
+                  <h2 className="text-lg font-medium mb-2">{item.title}</h2>
+                  <p className="text-gray-600">{item.description}</p>
+                  <button className="flex mx-auto mt-4 p-2 border-2 border-black rounded-2xl b button-card-animation">Zobacz</button>
                 </div>
-               ) 
-            )}
+              </div>
+            </div>
+          ))}
         </div>
-    </>
-  )
-}
+      </div>
+
+    );
+  };
+  
+  export default CarpetCards;
+
