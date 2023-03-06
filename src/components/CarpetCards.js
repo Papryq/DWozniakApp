@@ -20,17 +20,7 @@ const items = [
     id: 4,
     title: "Przykładowy tytuł 4",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 4",
-  },
-  {
-    id: 5,
-    title: "Przykładowy tytuł 5",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 5",
-  },
-  {
-    id: 6,
-    title: "Przykładowy tytuł 6",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 6",
-  },
+  }
 ];
 
 const getRandomImageUrl = () => {
@@ -52,9 +42,9 @@ const CarpetCards = () => {
   
     return (
       <div className="flex flex-col md:mx-24 items-center justify-center">
-        <div className="flex items-center justify-between w-full px-4 md:mr-0 md:mt-8">
-            <h1 className="text-4xl md:mr-24 mb-8">Zegary</h1>
-            <div>
+        <div className="flex items-center justify-between w-full px-4 mt-8 md:mr-0 md:mt-8">
+            <h1 className="text-4xl md:mr-24 md:mb-8">Zegary</h1>
+            <div className="md:hidden">
                 <button
                     className="md:mx-4 px-4 py-2 bg-gray-200 rounded-lg mr-4 button-card-animation"
                     onClick={handlePrevClick}
@@ -69,7 +59,7 @@ const CarpetCards = () => {
                 </button>
             </div>
         </div>
-        <div className="flex mt-4">
+        <div className="flex flex-wrap mt-4">
           {items.slice(0, 4).map((item, index) => (
             <div
               key={item.id}

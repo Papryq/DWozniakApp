@@ -1,147 +1,101 @@
-import React from "react";
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css";
-import Minion from './assets/minion.png';
+import { useState } from "react";
 
-/* Install pure-react-carousel using -> npm i pure-react-carousel */
+const items = [
+  {
+    id: 1,
+    title: "Przykładowy tytuł 1",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore.",
+  },
+  {
+    id: 2,
+    title: "Przykładowy tytuł 2",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore.",
+  },
+  {
+    id: 3,
+    title: "Przykładowy tytuł 3",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 3",
+  },
+  {
+    id: 4,
+    title: "Przykładowy tytuł 4",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 4",
+  },
+  {
+    id: 5,
+    title: "Przykładowy tytuł 5",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 5",
+  },
+  {
+    id: 6,
+    title: "Przykładowy tytuł 6",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 6",
+  },
+];
 
-export default function Index() {
+const getRandomImageUrl = () => {
+  const randomId = Math.floor(Math.random() * 1000);
+  return `https://picsum.photos/300/200?random=${randomId}`;
+};
+
+const ClockCards = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+  
+    const handlePrevClick = () => {
+      setCurrentIndex((prevIndex) => Math.max(0, prevIndex - 1));
+    };
+  
+    const handleNextClick = () => {
+      setCurrentIndex((prevIndex) => Math.min(items.length - 1, prevIndex + 1));
+    };
+  
     return (
-        <div className="container mx-auto">
-            <h2 className="mt-4 pt-4 ml-8 text-4xl">Zegary</h2>
-            <div className="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
-                {/* Carousel for desktop and large size devices */}
-                <CarouselProvider className="lg:block hidden" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={4} visibleSlides={4} step={1} infinite={true}>
-                    <div className="w-full relative flex items-center justify-center">
-                        <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
-                            <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 1L1 7L7 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </ButtonBack>
-                        <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
-                            <Slider>
-                                <div id="slider" className="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
-                                    <Slide index={0}>
-                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                                            <img src={Minion} alt="minion" className="object-cover object-center w-full" />
-                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 1</h2>
-                                                <div className="flex h-full items-end pb-6">
-                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Slide>
-                                    <Slide index={1}>
-                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
-                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
-                                                <div className="flex h-full items-end pb-6">
-                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Slide>
-                                    <Slide index={2}>
-                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto" >
-                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
-                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
-                                                <div className="flex h-full items-end pb-6">
-                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Slide>
-                                    <Slide index={3}>
-                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
-                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
-                                                <div className="flex h-full items-end pb-6">
-                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Slide>
-                                </div>
-                            </Slider>
-                        </div>
-                        <ButtonNext role="button" aria-label="slide forward" className="absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
-                            <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L7 7L1 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </ButtonNext>
-                    </div>
-                </CarouselProvider>
-
-                {/* Carousel for mobile and Small size Devices */}
-                <CarouselProvider className="block md:hidden " naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={4} visibleSlides={1} step={1} infinite={true}>
-                    <div className="w-full relative flex items-center justify-center">
-                        <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
-                            <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 1L1 7L7 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </ButtonBack>
-                        <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
-                            <Slider>
-                                <div id="slider" className="h-full w-full flex lg:gap-8 md:gap-6 items-center justify-start transition ease-out duration-700">
-                                    <Slide index={0}>
-                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                                            <img src={Minion} alt="black chair and white table" className="object-cover object-center w-full" />
-                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 1</h2>
-                                                <div className="flex h-full items-end pb-6">
-                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Slide>
-                                    <Slide index={1}>
-                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
-                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
-                                                <div className="flex h-full items-end pb-6">
-                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Slide>
-                                    <Slide index={2}>
-                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
-                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
-                                                <div className="flex h-full items-end pb-6">
-                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Slide>
-                                    <Slide index={3}>
-                                        <div className="flex flex-shrink-0 relative w-full sm:w-auto ">
-                                            <img src={Minion} alt="sitting area" className="object-cover object-center w-full" />
-                                            <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                                <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">Catalog 2</h2>
-                                                <div className="flex h-full items-end pb-6">
-                                                    <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Minimal Interior</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Slide>
-                                </div>
-                            </Slider>
-                        </div>
-                        <ButtonNext role="button" aria-label="slide forward" className="absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
-                            <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L7 7L1 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </ButtonNext>
-                    </div>
-                </CarouselProvider>
+      <div className="flex flex-col md:mx-24 items-center justify-center">
+        <div className=" flex items-center justify-between w-full mt-8 px-4 md:mr-0 md:mt-8">
+            <h1 className="text-4xl md:mr-24 md:mb-8">Zegary</h1>
+            <div className="md:hidden">
+                <button
+                    className="md:mx-4 px-4 py-2 bg-gray-200 rounded-lg mr-4 button-card-animation"
+                    onClick={handlePrevClick}
+                >
+                    {"<"}
+                </button>
+                <button
+                    className="px-4 py-2 bg-gray-200 rounded-lg button-card-animation"
+                    onClick={handleNextClick}
+                >
+                    {">"}
+                </button>
             </div>
         </div>
+        <div className="flex flex-wrap mt-4">
+          {items.slice(0, 6).map((item, index) => (
+            <div
+              key={item.id}
+              className={`w-full sm:w-1/2 md:w-1/4 p-4  ${
+                index === currentIndex ? "" : "hidden sm:block"
+              }`}
+            >
+              <div className="bg-white rounded-lg shadow-md md:card-animation">
+                <img
+                  className="w-full h-80 object-cover rounded-t-lg"
+                  src={getRandomImageUrl()}
+                  alt={item.title}
+                />
+                <div className="p-4">
+                  <h2 className="text-lg font-medium mb-2">{item.title}</h2>
+                  <p className="text-gray-600">{item.description}</p>
+                  <button className="flex mx-auto mt-4 p-2 border-2 border-black rounded-2xl b button-card-animation">Zobacz</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
     );
-}
+  };
+  
+  export default ClockCards;
+

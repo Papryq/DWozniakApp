@@ -40,8 +40,8 @@ export default function BlogCards() {
 
   return (
     <>
-        <div className='flex items-center md:justify-start justify-center md:ml-32 pb-4 mt-12'>
-            <h1 className='text-4xl'>Blog</h1>
+        <div className='flex justify-center pb-4 mt-12'>
+            <h1 className='text-5xl'>Blog</h1>
         </div>
         <div className='flex md:mx-24 items-center justify-center'>
         {items.slice(0, 4).map((item, index) => (
@@ -51,7 +51,7 @@ export default function BlogCards() {
                 index === currentIndex ? "" : "hidden sm:block"
               }`}
             >
-              <div className="bg-white rounded-lg">
+              <div className="bg-white shadow-2xl md:shadow-none rounded-lg">
                 <img
                   className="w-full h-48 object-cover"
                   src={item.photo}
