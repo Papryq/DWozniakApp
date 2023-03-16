@@ -81,7 +81,7 @@ export default function Header() {
       </svg>
     </span>
   </button>
-  <div className="bg-gray-400 max-w-2/3 max-h-2/3 absolute md:absolute opacity-75 text-white px-4 py-4 md:py-16 md:rounded-lg top-4 left-4 md:top-48 md:left-48 ">
+  <div className="bg-gray-400 max-w-2/3 max-h-2/3 absolute md:absolute opacity-75 text-white px-4 py-4 m-4 md:py-16 md:rounded-lg top-4 left-4 md:top-48 md:left-48 ">
       <div className='flex flex-col justify-items-center'>
       <h1 className="text-sky-300 md:py-4 text-xl md:text-4xl">Szklane zegary</h1>
       <p className='md:max-w-prose text-xs'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut rerum quam, quisquam, laboriosam possimus ratione reprehenderit repellendus veritatis vel voluptates mollitia optio excepturi, rem iusto dolores dolore pariatur sapiente illum iste repudiandae!</p>

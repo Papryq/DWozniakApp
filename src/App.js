@@ -1,22 +1,29 @@
 import './App.css';
-import Header from './components/Header';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+
+// Components
 import Navbar from './components/Navbar';
-import ClockCards from './components/ClockCards';
-import Quote from './components/Quote';
-import CarpetCards from './components/CarpetCards';
-import BlogCards from './components/BlogCards';
 import Footer from './components/Footer';
+
+// Pages
+import Home from './pages/Home';
+import BlogPage from './pages/BlogPage';
+import NotFound from './pages/NotFound';
+import Contact from './pages/Contact';
 
 function App() {
   return (
     <>
-        <Navbar />
-        <Header />
-        <Quote />
-        <ClockCards />
-        <CarpetCards />
-        <BlogCards />
-        <Footer />
+      <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path='blog/:id' element={<BlogPage />} />
+            <Route path='Kontakt' element={<Contact />} />
+          </Routes>
+          <Footer />
+      </Router>
     </>
   );
 }

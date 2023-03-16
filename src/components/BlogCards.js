@@ -43,7 +43,7 @@ export default function BlogCards() {
         <div className='flex justify-center pb-4 mt-12'>
             <h1 className='text-5xl'>Blog</h1>
         </div>
-        <div className='flex md:mx-24 items-center justify-center'>
+        <div className='flex md:mx-24 items-center justify-center '>
         {items.slice(0, 4).map((item, index) => (
             <div
               key={item.id}
