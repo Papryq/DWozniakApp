@@ -59,7 +59,7 @@ const CarpetCards = () => {
                 </button>
             </div>
         </div>
-        <div className="flex flex-wrap mt-4">
+        <div className="flex flex-wrap">
           {items.slice(0, 4).map((item, index) => (
             <div
               key={item.id}

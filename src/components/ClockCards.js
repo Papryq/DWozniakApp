@@ -69,7 +69,7 @@ const ClockCards = () => {
                 </button>
             </div>
         </div>
-        <div className="flex flex-wrap mt-4">
+        <div className="flex flex-wrap">
           {items.slice(0, 6).map((item, index) => (
             <div
               key={item.id}
@@ -86,7 +86,7 @@ const ClockCards = () => {
                 <div className="p-4">
                   <h2 className="text-lg font-medium mb-2">{item.title}</h2>
                   <p className="text-gray-600">{item.description}</p>
-                  <button className="flex mx-auto mt-4 p-2 border-2 border-black rounded-2xl b button-card-animation">Zobacz</button>
+                  <button className="flex mx-auto mt-4 p-2 border-2 border-black rounded-2xl button-card-animation">Zobacz</button>
                 </div>
               </div>
             </div>

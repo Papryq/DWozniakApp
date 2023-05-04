@@ -8,11 +8,11 @@ import BlogCards from '../components/BlogCards';
 export default function Home() {
   return (
     <div>
-        <Header />
-        <Quote />
-        <ClockCards />
-        <CarpetCards />
-        <BlogCards />
+        <Header/>
+        <Quote/>
+        <ClockCards/>
+        <CarpetCards/>
+        <BlogCards/>
     </div>
   )
 }

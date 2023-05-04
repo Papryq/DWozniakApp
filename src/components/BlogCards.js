@@ -47,11 +47,11 @@ export default function BlogCards() {
         {items.slice(0, 4).map((item, index) => (
             <div
               key={item.id}
-              className={`p-4 md:m-4 md:blog-animation flex flex-col shadow-xl border-white border-8' ${
+              className={`p-4 md:m-4 md:blog-animation flex flex-col border-white border-8 mb-16' ${
                 index === currentIndex ? "" : "hidden sm:block"
               }`}
             >
-              <div className="bg-white shadow-2xl md:shadow-none rounded-lg">
+              <div className="bg-white shadow-xl  rounded-lg">
                 <img
                   className="w-full h-48 object-cover"
                   src={item.photo}
