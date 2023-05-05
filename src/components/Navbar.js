@@ -5,7 +5,7 @@ export default function Navbar() {
 
   return (
     <>
-        <nav class="bg-zinc-200 px-2 sm:px-4 py-1">
+        <nav class="bg-zinc-300 px-2 sm:px-4 py-1">
             <div class="md:container flex flex-wrap md:items-center md:justify-between md:mx-auto">
                     <Link to="/" class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">DW</Link>
                 <div class="hidden w-full md:block md:w-auto" id="navbar-default">

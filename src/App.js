@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import BlogPage from './pages/BlogPage';
 import NotFound from './pages/NotFound';
 import Contact from './pages/Contact';
+import FooterEndPage from './components/FooterEndPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path='Kontakt' element={<Contact />} />
           </Routes>
           <Footer />
+          <FooterEndPage />
       </Router>
     </>
   );

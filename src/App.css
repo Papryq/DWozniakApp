@@ -9,7 +9,6 @@
 }
 
 
-
 @layer components {
   .categories-nav {
     @apply text-xl block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0;
@@ -21,7 +20,7 @@
     @apply transition ease-in-out hover:text-yellow-300 hover:bg-white hover:scale-110 duration-300;
   };
   .button-footer {
-    @apply transition ease-in-out hover:text-cyan-700 hover:bg-cyan-300 hover:scale-110 duration-300;
+    @apply transition ease-in-out hover:text-cyan-700 hover:bg-cyan-300 hover:border-cyan-200 hover:scale-110 duration-300;
   };
   .button-card-animation{
     @apply hover:bg-black hover:text-white duration-200;

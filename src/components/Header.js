@@ -16,7 +16,7 @@ export default function Header() {
   <div
     className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
     <div
-      className="relative float-left -mr-[100%] w-full max-h-screen transition-transform ease-in-out motion-reduce:transition-none"
+      className="relative float-left -mr-[100%] w-full max-h-[52rem] transition-transform ease-in-out motion-reduce:transition-none"
       data-te-carousel-item
       data-te-carousel-active>
       <img
@@ -25,7 +25,7 @@ export default function Header() {
         alt="" />
     </div>
     <div
-      className="relative float-left -mr-[100%] hidden w-full max-h-screen transition-transform ease-in-out motion-reduce:transition-none"
+      className="relative float-left -mr-[100%] hidden w-full max-h-[52rem] transition-transform ease-in-out motion-reduce:transition-none"
       data-te-carousel-item>
       <img
         src={header2}
@@ -33,7 +33,7 @@ export default function Header() {
         alt="" />
     </div>
     <div
-      className="relative float-left -mr-[100%] hidden w-full max-h-screen transition-transform ease-in-out motion-reduce:transition-none"
+      className="relative float-left -mr-[100%] hidden w-full max-h-[52rem] transition-transform ease-in-out motion-reduce:transition-none"
       data-te-carousel-item>
       <img
         src={header3}

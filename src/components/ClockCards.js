@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const items = [
   {
@@ -86,7 +87,7 @@ const ClockCards = () => {
                 <div className="p-4">
                   <h2 className="text-lg font-medium mb-2">{item.title}</h2>
                   <p className="text-gray-600">{item.description}</p>
-                  <button className="flex mx-auto mt-4 p-2 border-2 border-black rounded-2xl button-card-animation">Zobacz</button>
+                  <Link to="https://allegro.pl/" target="_blank"><button className="flex mx-auto mt-4 p-2 border-2 border-black rounded-2xl b button-card-animation">Zobacz</button></Link>
                 </div>
               </div>
             </div>

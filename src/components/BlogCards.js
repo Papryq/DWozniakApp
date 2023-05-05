@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom'; 
 
 import BlogPhoto1 from './assets/blog1.jpg';
 import BlogPhoto2 from './assets/blog2.jpg';
@@ -60,7 +61,7 @@ export default function BlogCards() {
                   <h2 className="mx-8 p-2 text-2xl">{item.title}</h2>
                 <div className="p-2">
                   <p className=" p-2 text-gray-400">{item.description}</p>
-                  <button className="flex mx-auto mt-2 p-2 border-2 border-black rounded-2xl b button-card-animation">Zobacz</button>
+                  <Link to={`/Blog/${item.id}`}><button className="flex mx-auto mt-2 p-2 border-2 border-black rounded-2xl b button-card-animation">Zobacz</button></Link>
                 </div>
               </div>
             </div>
