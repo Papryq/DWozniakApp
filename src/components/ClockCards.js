@@ -21,17 +21,7 @@ const items = [
     id: 4,
     title: "Przykładowy tytuł 4",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 4",
-  },
-  {
-    id: 5,
-    title: "Przykładowy tytuł 5",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 5",
-  },
-  {
-    id: 6,
-    title: "Przykładowy tytuł 6",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt cum accusantium earum at dignissimos illum libero culpa quibusdam cupiditate ullam tempore hic, animi porro fuga aliquid asperiores, nam sit laboriosam odit inventore. 6",
-  },
+  }
 ];
 
 const getRandomImageUrl = () => {
@@ -71,7 +61,7 @@ const ClockCards = () => {
             </div>
         </div>
         <div className="flex flex-wrap">
-          {items.slice(0, 6).map((item, index) => (
+          {items.slice(0, 4).map((item, index) => (
             <div
               key={item.id}
               className={`w-full sm:w-1/2 md:w-1/4 p-4  ${

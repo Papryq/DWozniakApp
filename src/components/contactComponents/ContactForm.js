@@ -17,7 +17,7 @@ const ContactForm = () => {
   return (
     <div className='ml-8 my-8'>
         <h1 className='text-2xl border-b border-cyan-400 '>Formularz kontatkowy</h1>
-        <div className="max-w-md mx-auto my-8 p-6 bg-white shadow-lg ">
+        <div className="max-w-md mx-auto my-8 p-6 bg-white shadow-lg     ">
         <h2 className="text-2xl font-bold mb-2">Skontaktuj sie z nami</h2>
         <form onSubmit={handleSubmit}>
             <div className="mb-2">
