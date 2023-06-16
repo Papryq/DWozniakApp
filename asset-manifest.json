@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/DWozniakApp/static/css/main.d675b889.css",
+    "main.js": "/DWozniakApp/static/js/main.9f60a0cf.js",
+    "static/media/blog1.jpg": "/DWozniakApp/static/media/blog1.976b6e3095c6f1dd8022.jpg",
+    "static/media/random.jpg": "/DWozniakApp/static/media/random.976b6e3095c6f1dd8022.jpg",
+    "static/media/blog2.jpg": "/DWozniakApp/static/media/blog2.1aa8206b5bf731f53b98.jpg",
+    "static/media/header2.jpg": "/DWozniakApp/static/media/header2.a36a8d664e68c623478a.jpg",
+    "static/media/blog3.jpg": "/DWozniakApp/static/media/blog3.c8128d386b12535ea2c9.jpg",
+    "static/media/header3.jpg": "/DWozniakApp/static/media/header3.82a2e79cb7ac65693e9b.jpg",
+    "static/media/header1.jpg": "/DWozniakApp/static/media/header1.2afc70b4755b4cc75992.jpg",
+    "static/media/phone-call.png": "/DWozniakApp/static/media/phone-call.d35848942c955a6232b3.png",
+    "index.html": "/DWozniakApp/index.html",
+    "main.d675b889.css.map": "/DWozniakApp/static/css/main.d675b889.css.map",
+    "main.9f60a0cf.js.map": "/DWozniakApp/static/js/main.9f60a0cf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d675b889.css",
+    "static/js/main.9f60a0cf.js"
+  ]
+}
