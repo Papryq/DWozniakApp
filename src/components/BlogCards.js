@@ -42,7 +42,23 @@ export default function BlogCards() {
   return (
     <>
         <div className='flex justify-center pb-4 mt-12'>
-            <h1 className='text-5xl'>Blog</h1>
+        <div className="flex items-center justify-center w-full px-4 mt-8 md:mr-0 md:mt-8">
+            <h1 className="text-4xl md:mr-24 md:mb-8">Blog</h1>
+            <div className="md:hidden pl-36">
+                <button
+                    className="md:mx-4 px-4 py-2 bg-gray-200 rounded-lg mr-4 button-card-animation"
+                    onClick={handlePrevClick}
+                >
+                    {"<"}
+                </button>
+                <button
+                    className="px-4 py-2 bg-gray-200 rounded-lg button-card-animation"
+                    onClick={handleNextClick}
+                >
+                    {">"}
+                </button>
+            </div>
+        </div>
         </div>
         <div className='flex md:mx-24 items-center justify-center '>
         {items.slice(0, 4).map((item, index) => (
@@ -70,21 +86,3 @@ export default function BlogCards() {
     </>
   )
 }
-
-            // <div className='blog-animation flex flex-col shadow-2xl rounded-lg border-white border-8 pb-4'>
-            //     <img src={BlogPhoto1} alt="" className="max-w-sm max-h-md bg-white"/>
-            //     <h2 className="mx-8 p-2 text-3xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eveniet debitis magni.</h2>
-            //     <p className="mx-8 p-4 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi tenetur voluptates ipsam maiores molestiae, illum voluptas, repellat dignissimos eius mollitia consequuntur voluptatum praesentium odit optio unde, accusamus id ullam cumque aperiam aspernatur?</p>
-            // </div>
-            // <div className='blog-animation flex flex-col shadow-2xl rounded-lg border-white border-8 pb-4'>
-            //     <img src={BlogPhoto2} alt="" className="max-w-sm max-h-md bg-white"/>
-            //     <h2 className="mx-auto p-2 text-3xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eveniet debitis magni.</h2>
-            //     <p className="mx-8 p-4 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi tenetur voluptates ipsam maiores molestiae, illum voluptas, repellat dignissimos eius mollitia consequuntur voluptatum praesentium odit optio unde, accusamus id ullam cumque aperiam aspernatur?</p>
-            //     <button className="border-2 border-gray-700 mx-auto rounded-xl px-6 py-2">Zobacz</button>
-            // </div>
-            // <div className='blog-animation flex flex-col shadow-2xl rounded-lg border-white border-8 pb-4'>
-            //     <img src={BlogPhoto3} alt="" className="max-w-sm max-h-md bg-white"/>
-            //     <h2 className="mx-auto p-2 text-3xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eveniet debitis magni.</h2>
-            //     <p className="mx-8 p-4 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi tenetur voluptates ipsam maiores molestiae, illum voluptas, repellat dignissimos eius mollitia consequuntur voluptatum praesentium odit optio unde, accusamus id ullam cumque aperiam aspernatur?</p>
-            //     <button className="border-2 border-gray-700 mx-auto rounded-xl px-6 py-2">Zobacz</button>
-            // </div>

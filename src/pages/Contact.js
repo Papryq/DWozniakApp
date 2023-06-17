@@ -1,10 +1,11 @@
-import React from 'react'
+
+// Components
 import ContactForm from '../components/contactComponents/ContactForm'
 import ContactInformation from '../components/contactComponents/ContactInformation'
 
 export default function Contact() {
   return (
-    <div className='container md:flex md:mb-16'>
+    <div className="container md:flex md:mb-16">
         <ContactInformation />
         <ContactForm />
     </div>

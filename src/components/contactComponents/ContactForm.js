@@ -15,13 +15,17 @@ const ContactForm = () => {
   };
 
   return (
-    <div className='ml-8 my-8'>
-        <h1 className='text-2xl border-b border-cyan-400 '>Formularz kontatkowy</h1>
-        <div className="max-w-md mx-auto my-8 p-6 bg-white shadow-lg     ">
+    <div className="ml-8 my-8">
+        <h1
+        className="text-2xl border-b border-cyan-400">Formularz kontatkowy</h1>
+        <div className="max-w-md mx-auto my-8 p-6 bg-white shadow-lg">
         <h2 className="text-2xl font-bold mb-2">Skontaktuj sie z nami</h2>
         <form onSubmit={handleSubmit}>
             <div className="mb-2">
-            <label htmlFor="name" className="block mb-2 text-sm font-medium">
+            <label
+                htmlFor="name"
+                className="block mb-2 text-sm font-medium"
+            >
                 Imie
             </label>
             <input
@@ -34,7 +38,10 @@ const ContactForm = () => {
             />
             </div>
             <div className="mb-2">
-            <label htmlFor="surname" className="block mb-2 text-sm font-medium">
+            <label 
+                htmlFor="surname" 
+                className="block mb-2 text-sm font-medium"
+            >
                 Nazwisko
             </label>
             <input
@@ -60,7 +67,10 @@ const ContactForm = () => {
             />
             </div>
             <div className="mb-2">
-            <label htmlFor="phoneNumber" className="block mb-2 text-sm font-medium">
+            <label 
+                htmlFor="phoneNumber" 
+                className="block mb-2 text-sm font-medium"
+            >
                 Numer Telefonu
             </label>
             <input
@@ -73,7 +83,10 @@ const ContactForm = () => {
             />
             </div>
             <div className="mb-4">
-            <label htmlFor="message" className="block mb-2 text-sm font-medium">
+            <label 
+                htmlFor="message" 
+                className="block mb-2 text-sm font-medium"
+            >
                 Wiadomosc
             </label>
             <textarea
@@ -86,8 +99,8 @@ const ContactForm = () => {
             ></textarea>
             </div>
             <button
-            type="submit"
-            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                type="submit"
+                className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
             >
             Wyslij
             </button>

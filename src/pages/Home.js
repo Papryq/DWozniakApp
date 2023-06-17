@@ -1,4 +1,5 @@
-import React from 'react'
+
+// Components
 import Header from '../components/Header';
 import Quote from '../components/Quote';
 import ClockCards from '../components/ClockCards';

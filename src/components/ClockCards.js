@@ -43,7 +43,7 @@ const ClockCards = () => {
   
     return (
       <div className="flex flex-col md:mx-24 items-center justify-center">
-        <div className=" flex items-center justify-between w-full mt-8 px-4 md:mr-0 md:mt-8">
+        <div className="flex items-center justify-between w-full mt-8 px-4 md:mr-0 md:mt-8">
             <h1 className="text-4xl md:mr-24 md:mb-8">Zegary</h1>
             <div className="md:hidden">
                 <button

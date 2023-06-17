@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import header1 from './assets/header1.jpg';
 import header2 from './assets/header2.jpg';
 import header3 from './assets/header3.jpg';
@@ -47,7 +47,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="border-b-2 border-opacity-10 border-black flex flex-col items-center justify-center h-screen bg-gray-100">
+      <div className="overflow-hidden border-b-2 border-opacity-10 border-black flex flex-col items-center justify-center h-screen bg-gray-100">
         <div
           className="relative h-3/4 w-full transition-transform duration-500"
           style={{ transform: `translateX(-${currentImage * 100}%)` }}
@@ -58,7 +58,8 @@ export default function Header() {
               src={image}
               alt="Random"
               className="w-full h-full object-cover absolute top-0 left-0"
-              style={{ transform: `translateX(${index * 100}%)` }}
+              style={{ transform: `translateX(${index * 100}%)`
+            }}
             />
           ))}
         </div>
@@ -73,7 +74,7 @@ export default function Header() {
             pariatur sapiente illum iste repudiandae!
           </p>
           <div className="flex justify-center">
-            <button className="mt-1 p-2 text-xs md:text-md rounded-lg bg-yellow-300 text-white button-header">
+            <button onClick={() => window.scrollTo(0, 1300)} className="mt-1 p-2 text-xs md:text-md rounded-lg bg-yellow-300 text-white button-header">
               Sprawdz oferte
             </button>
           </div>
